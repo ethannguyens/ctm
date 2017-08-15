@@ -46,4 +46,4 @@ class ReadFile {
   }
 }
 
-export default ReadFile;
+module.exports = ReadFile;
