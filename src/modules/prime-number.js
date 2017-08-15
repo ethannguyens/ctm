@@ -4,17 +4,26 @@ class PrimeNumber {
     this.isPrime = this.isPrime.bind(this);
   }
 
+  /**
+   * Get the prime words
+   * @param obj
+   * @returns {{}}
+   */
   static getPrimeWords(obj) {
-    let primeWords = {};
+    let primeWords = {...obj};
 
-    for (let key in obj) {
-      primeWords[key] = this.isPrime(obj[key]);
-      console.log(`${obj[key]} = ${this.isPrime(obj[key])}`);
+    for (let key in primeWords) {
+      primeWords[key]['prime'] = this.isPrime(obj[key]);
     }
 
     return primeWords;
   }
 
+  /**
+   * Check if a given number is prime
+   * @param n
+   * @returns {boolean}
+   */
   static isPrime(n) {
     let divisor = 2;
 
