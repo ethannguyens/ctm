@@ -8,36 +8,44 @@ class ReadFile {
     this.stream = this.stream.bind(this);
   }
 
-  getUniqueWords(path, option='stream', encode='utf8') {
-    switch (option) {
-      case 'async':
-        console.log('async');
-        break;
-      case 'sync':
-        console.log('sync');
-        break;
-      default:
-        console.log('stream');
-        return this.stream(path, encode);
-    }
+  getUniqueWords(path, option = 'stream', encode = 'utf8') {
+    return new Promise((resolve) => {
+      switch (option) {
+        case 'async':
+          console.log('async');
+          break;
+        case 'sync':
+          console.log('sync');
+          break;
+        default:
+          console.log('stream');
+          this.stream(path, encode).then(uniqueWords => {
+            resolve(uniqueWords);
+          })
+      }
+    });
   }
 
-  countWords(line) {
+  countWords(uniqueWords, line) {
     const words = line.match(/(?!\d)(\w+\b)/g, '');
 
     let word;
     for (let i in words) {
       word = words[i].toLowerCase();
-      console.log(word);
-      this.uniqueWords[word] ? this.uniqueWords[word] += 1 : this.uniqueWords[word] = 1;
+      uniqueWords[word] = uniqueWords[word] ? uniqueWords[word] += 1 : 1;
     }
+
+    return uniqueWords;
   }
 
   stream(path, encode) {
-    let remaining = '';
+    return new Promise((resolve) => {
+      let self = this;
+      let remaining = '';
+      let uniqueWords = {};
 
       fs.createReadStream(path, encode)
-        .on('data', function(chunk) {
+        .on('data', function (chunk) {
           let index = remaining.indexOf('\n');
           let line;
 
@@ -46,17 +54,16 @@ class ReadFile {
           while (index > -1) {
             line = remaining.substring(0, index);
             remaining = remaining.substring(index + 1);
-            this.countWords(line);
+            uniqueWords = self.countWords(uniqueWords, line);
             index = remaining.indexOf('\n');
           }
         })
         .on('end', () => {
-          if (remaining.length > 0) this.countWords(remaining);
-          return
+          if (remaining.length > 0) uniqueWords = self.countWords(uniqueWords, remaining);
+          resolve(uniqueWords);
         });
+    });
   }
 }
 
-console.log(new ReadFile('src/modules/test.txt'));
-
-//module.exports = ReadFile;
+module.exports = ReadFile;
