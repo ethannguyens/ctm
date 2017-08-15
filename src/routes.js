@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App.jsx';
-import WordCount from './components/WordCount/WordCount.jsx';
+import WordCountPage from './components/WordCountPage/WordCountPage.jsx';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={WordCount} />
+    <IndexRoute component={WordCountPage} />
   </Route>
 );
