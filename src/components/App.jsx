@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {isTouchDevice} from '../modules/utility';
 
+import '../styles/main.scss';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -15,13 +17,13 @@ class App extends React.Component {
   }
 
   addNontouchClass() {
-    document.querySelector('.nguyene').classList.add('nontouch');
+    document.querySelector('.nguyene-ctm').classList.add('nontouch');
   }
 
   render() {
     return (
-      <div className={`nguyene`}>
-        <div className="title">Compare the Market - Read File Test</div>
+      <div className={'nguyene-ctm'}>
+        <div className="title">React-Redux Webpack Express - Ethan Nguyen</div>
         {this.props.children}
       </div>
     );

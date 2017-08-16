@@ -5,6 +5,8 @@ import {bindActionCreators} from 'redux';
 import * as wordActions from '../../actions/wordActions';
 import WordTable from './WordTable';
 
+import './WordsPage.scss';
+
 class WordsPage extends React.Component {
   constructor(props, context) {
     super(props, context);

@@ -12,6 +12,6 @@ describe('Word Api', () =>{
     //act and assert
     WordApi.getWords(filePath).then(data => {
       assert.equal(JSON.stringify(expectedData), JSON.stringify(data));
-    })
+    });
   });
 });
