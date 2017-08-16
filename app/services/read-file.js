@@ -9,7 +9,7 @@ class ReadFile {
     this.stream = this.stream.bind(this);
   }
 
-  /**
+  /**s
    * The main function to get the uniqueWords
    * @param path
    * @param option
