@@ -1,25 +1,25 @@
 import React from 'react';
-import WordRow from './WordRow';
 
 const WordTable = ({words}) => {
   return (
     <table className="wordPrimeTable">
       <thead>
-        <tr>
-          <th>Word</th>
-          <th>Count</th>
-          <th>Prime</th>
-        </tr>
+      <tr>
+        <th>Word</th>
+        <th>Count</th>
+        <th>Prime</th>
+      </tr>
       </thead>
       <tbody>
       {
         Object.keys(words).map(key => {
-          return <WordRow
-            key={key}
-            word={key}
-            count={words[key].count}
-            prime={words[key].prime}
-          />
+          return (
+            <tr key={key}>
+              <td>{key}</td>
+              <td>{words[key].count}</td>
+              <td>{words[key].prime.toString()}</td>
+            </tr>
+          )
         })
       }
       </tbody>

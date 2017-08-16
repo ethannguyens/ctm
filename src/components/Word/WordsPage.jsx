@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as wordActions from '../../actions/wordActions';
 import WordTable from './WordTable';
-import {browserHistory} from 'react-router';
 
 class WordsPage extends React.Component {
   constructor(props, context) {
