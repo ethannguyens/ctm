@@ -15,9 +15,9 @@ class WordPrimeCount {
     return new Promise(resolve => {
       readFile.getUniqueWords(path, option, encode).then((uniqueWords => {
         resolve(PrimeNumber.getPrimeWords(uniqueWords));
-      }))
+      }));
     });
   }
 }
 
-module.exports = WordPrimeCount;
+export default WordPrimeCount;

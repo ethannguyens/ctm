@@ -7,7 +7,7 @@
     "prestart": "babel-node app/tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
     "open:src": "export NODE_ENV='dev' && babel-node app/tools/srcServer.js",
-    "lint": "node_modules/.bin/esw webpack.config.* src app/tools",
+    "lint": "node_modules/.bin/esw webpack.config.* app src",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress app/tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",

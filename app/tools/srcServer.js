@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
 app.get('/data', (red, res) => {
   WordApi.getWords().then(words => {
     res.send(words);
-  })
+  });
 });
 
 

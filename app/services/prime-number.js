@@ -29,11 +29,11 @@ class PrimeNumber {
 
     while (n > divisor) {
       if (n % divisor === 0) return false;
-      else divisor++
+      else divisor++;
     }
 
     return true;
   }
 }
 
-module.exports = PrimeNumber;
+export default PrimeNumber;

@@ -134,4 +134,4 @@ class ReadFile {
 
 }
 
-module.exports = ReadFile;
+export default ReadFile;
