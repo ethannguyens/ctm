@@ -21,7 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div className={`nguyene`}>
-        {/*<div className="title">Compare the Market - Read File Test - Ethan Nguyen</div>*/}
+        <div className="title">Compare the Market - Read File Test</div>
         {this.props.children}
       </div>
     );

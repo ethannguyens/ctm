@@ -11,6 +11,8 @@
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress app/tools/testSetup.js \"src/**/*.test.js\" \"app/**/*.test.js\" ",
     "test:watch": "npm run test -- --watch",
+    "test-single": "mocha --reporter progress app/tools/testSetup.js",
+    "test-single:watch": "npm run test-single -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "build:html": "babel-node app/tools/buildHtml.js",
