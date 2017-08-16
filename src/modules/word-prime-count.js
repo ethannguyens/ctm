@@ -20,5 +20,4 @@ class WordPrimeCount {
   }
 }
 
-WordPrimeCount.getWordPrimeCount('src/modules/test.txt').then(res => console.log(res));
-
+module.exports = WordPrimeCount;
