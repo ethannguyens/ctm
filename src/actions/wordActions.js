@@ -6,11 +6,12 @@ export function loadWordsSuccess(words) {
   return {type: types.LOAD_WORDS_SUCCESS, words};
 }
 
-export function loadWords() {
+export function loadWords(callback) {
   return function (dispatch) {
     dispatch(beginAjaxCall());
-    ajax('http://localhost:3000/data', words => {
+    return ajax('http://localhost:3000/data', words => {
       dispatch(loadWordsSuccess(words));
+      if (callback) callback();
     });
   };
 }
