@@ -21,7 +21,7 @@ describe('Get unique words', () => {
     readFile.getUniqueWords(location, 'stream', 'utf8').then((data) => {
       assert.equal(JSON.stringify(expectedData), JSON.stringify(data));
     });
-  })
+  });
 });
 
 describe('Count Word', () => {
@@ -61,7 +61,7 @@ describe('sync', () => {
     readFile.sync(path.join( __dirname, '../mock/test.txt'), 'utf8').then((data) => {
       assert.equal(JSON.stringify(expectedData), JSON.stringify(data));
     });
-  })
+  });
 
 });
 
@@ -75,7 +75,7 @@ describe('async', () => {
     readFile.async(path.join( __dirname, '../mock/test.txt'), 'utf8').then((data) => {
       assert.equal(JSON.stringify(expectedData), JSON.stringify(data));
     });
-  })
+  });
 });
 
 describe('stream', () => {
@@ -88,5 +88,5 @@ describe('stream', () => {
     readFile.stream(path.join( __dirname, '../mock/test.txt'), 'utf8').then((data) => {
       assert.equal(JSON.stringify(expectedData), JSON.stringify(data));
     });
-  })
+  });
 });

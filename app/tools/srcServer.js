@@ -11,7 +11,7 @@ process.env.NODE_ENV = 'dev';
 const port = 3000;
 const app = express();
 const compiler = webpack(config);
-
+const filePath = path.join( __dirname, '../mock/Railway-Children-by-E-Nesbit.txt');
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/data', (red, res) => {
-  WordApi.getWords().then(words => {
+  WordApi.getWords(filePath).then(words => {
     res.send(words);
   });
 });
