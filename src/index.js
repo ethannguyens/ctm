@@ -6,8 +6,11 @@ import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
+import {loadWords} from './actions/wordActions';
+
 
 const store = configureStore();
+store.dispatch(loadWords());
 
 render(
   <Provider store={store}>
