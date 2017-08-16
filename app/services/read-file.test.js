@@ -1,4 +1,3 @@
-import expect from 'expect';
 import ReadFile from './read-file';
 import path from 'path';
 

@@ -1,5 +1,5 @@
-import expect from 'expect';
 import PrimeNumber from './prime-number';
+const assert = require('assert');
 
 describe('Prime Number', () => {
   it('should tell wether a given numver is prime', () => {
@@ -10,7 +10,7 @@ describe('Prime Number', () => {
     const isPrime = PrimeNumber.isPrime(n);
 
     //assert
-    expect(isPrime).toBe(false);
+    assert.equal(false, isPrime);
   });
 
   it('should return an object with correct prime result', () => {
@@ -25,7 +25,6 @@ describe('Prime Number', () => {
     const newObj = PrimeNumber.getPrimeWords(obj);
 
     //assert
-    expect(newObj['a'].prime).toBe(false);
-
+    assert.equal(false, newObj['a'].prime);
   });
 });
