@@ -13,7 +13,7 @@ class PrimeNumber {
     let primeWords = {...obj};
 
     for (let key in primeWords) {
-      primeWords[key]['prime'] = this.isPrime(obj[key]);
+      primeWords[key].prime = this.isPrime(obj[key].count);
     }
 
     return primeWords;
