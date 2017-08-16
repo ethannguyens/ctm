@@ -3,7 +3,6 @@ import webpack from 'webpack';
 import path from 'path';
 import config from '../webpack.config';
 import open from 'open';
-import WordPrimeCount from '../src/modules/word-prime-count';
 
 /* eslint-disable no-console */
 process.env.NODE_ENV = 'dev';
@@ -19,13 +18,6 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-
-app.get('data', function(req, res) {
-  WordPrimeCount.getWordPrimeCount(path.join( __dirname, '../src/modules/test.txt')).then( res =>{
-      res.send(JSON.stringify(res));
-    }
-  )
-});
 
 app.get('*', function(req, res) {
   res.sendFile(path.join( __dirname, '../src/index.html'));
