@@ -15,7 +15,8 @@ describe('Async Actions', () => {
 
   it('should create BEGIN_AJAX_CALL and LOAD_WORDS_SUCCESS when loading words', (done) => {
     //arrange
-    nock('http://localhost:3000')
+    const port = process.env.PORT || 3000;
+    nock(`http://localhost:${port}`)
       .get('/data')
       .reply(200, {body: {words: {a: {count: 1, prime: true}}}});
 

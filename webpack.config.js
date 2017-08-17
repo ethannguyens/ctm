@@ -3,6 +3,7 @@ import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 //Default Production
+const port = process.env.PORT || 3000;
 const prod = {
   devtool: 'source-map',
   entry: './src/index',
@@ -58,7 +59,7 @@ const dev = {
   ],
   devServer: {
     contentBase: './src',
-    headers: { "Access-Control-Allow-Origin": "http://localhost:3000", "Access-Control-Allow-Credentials": "true" }
+    headers: { "Access-Control-Allow-Origin": `http://localhost:${port}`, "Access-Control-Allow-Credentials": "true" }
   },
   plugins: [
     new webpack.ProgressPlugin({ profile: false }),

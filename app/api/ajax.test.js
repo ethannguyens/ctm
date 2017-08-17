@@ -9,13 +9,14 @@ describe('Ajax', () => {
 
   it('should make an ajax call and return the correct data', (done) => {
     //arrange
+    const port = process.env.PORT || 3000;
     const words = {words: {a: {count: 1, prime: true}}};
-    nock('http://localhost:3000')
+    nock(`http://localhost:${port}`)
       .get('/data')
       .reply(200, words);
 
     //act and assert
-    ajax('http://localhost:3000/data', data => {
+    ajax(`http://localhost:${port}`, data => {
       expect(data).toEqual(words);
       done();
     });

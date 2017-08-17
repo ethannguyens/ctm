@@ -8,7 +8,7 @@ import WordApi from '../api/wordApi';
 /* eslint-disable no-console */
 process.env.NODE_ENV = 'dev';
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 const compiler = webpack(config);
 const filePath = path.join( __dirname, '../mock/Railway-Children-by-E-Nesbit.txt');
