@@ -21,8 +21,7 @@
     "postbuild": "babel-node app/tools/distServer.js",
     "babel-test": "babel-node src/modules/word-prime-count",
     "heroku-prebuild": "npm run clean-dist",
-    "heroku-build": "babel-node src/modules/word-prime-count",
-    "heroku-postbuild": "babel-node app/tools/distServer.js"
+    "heroku-postbuild": "babel-node app/tools/build.js"
   },
   "repository": {
     "type": "git",
