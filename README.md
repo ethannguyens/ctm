@@ -76,6 +76,7 @@ Due to the time scale of this project, these following improvements can be made:
   * Unit test run on the browser instead of on `node`.
   * User acceptance with **Webdriverio** **Selenium** on local browser or **SauceLabs**
   * **GitHook** to enforce code standard on commit.
+  * May separate stylesheet fromt he bundle for scalability.
 
 #### App Deployment - Measurements
 | Asset        | Load time | Size  |
