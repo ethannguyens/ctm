@@ -1,4 +1,4 @@
-# CTM Reac Redux Word Count Prime
+# CTM React-Redux Word Count Prime
 
 > An React-Redux Webpack project to read data from a text file and identify if the repeat of the word is prime or not
 
