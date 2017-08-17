@@ -38,6 +38,52 @@ As an addition, this project as already been deployed to [Heroku](https://nguyen
 Raw Data - a JSOM object that contain all the words can be access by open the page [http://localhost:5000/data](http://localhost:5000/data) after the application is up running.
 
 ### Solution Approach
+#### Read file `read-file.js`
+All the below solutions are implemented. The streaming is a default method for this application.
+##### Buffering - Load the entire content at once
+###### Async - Asynchronously reads the whole content of a file.
+Example: 
+
+```javascriptvar 
+const fs = require('fs');
+fs.readFile('my-file.txt', 'utf8', (err, data) => {  
+    if (err) throw err;
+    console.log(data);
+});
+```
+The callback is passed with 2 arguments `(err, data)`, where data is the content of the file.
+If no encoding specified - utf8 in this case, the raw buffer is return. This is the widely use due to it's simplicity and non blocking.
+###### Sync - Synchronously read the whole content of a file.
+Example:
+var fs = require('fs');
+Executed thread is blocked. Error need to handle using a `try...catch`
+```javascriptvar 
+try {  
+    const data = fs.readFileSync('my-file.txt', 'utf8');
+    console.log(data);    
+} catch(e) {
+    console.log('Error:', e.stack);
+}
+```
+#### Streaming - Load contents incrementally
+Read file by open it as a stream
+Example:
+```javascriptvar 
+const fs = require('fs');
+const data = '';
+
+const readStream = fs.createReadStream('my-file.txt', 'utf8');
+
+readStream.on('data', chunk => {  
+    data += chunk;
+}).on('end', () => {
+    console.log(data);
+});
+```
+
+#### Prime - `prime-number.js`
+TDD approach, solving traditional prime algorithm problem using while loop. The algorithm complexity is `O(sqrt(n))`
+
 #### Webpack
 `Webpack` is used to bundle all of the files of this project (js, jsx, scss, json...). Javascipt file is transpile using babel before bundling.
 There 2 separate configurations, 1 for development with hot module reloading, source map. One for deployment with `uglify` and no source mapping
@@ -69,6 +115,7 @@ For the demonstration used both **TDD** and **BDD** in this project. For the ser
   * `enzyme` is to help assert, manipulate, and traverse react components
   * `mocha` as test runner
   * `jsdom` is used to construct the fake DOM
+  * `expect` and native node `asser` are used for assertions
 
 ### Future Improvements
 Due to the time scale of this project, these following improvements can be made:
