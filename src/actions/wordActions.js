@@ -2,7 +2,7 @@ import * as types from './actionTypes';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 import ajax from '../../app/api/ajax';
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 export function loadWordsSuccess(words) {
   return {type: types.LOAD_WORDS_SUCCESS, words};

@@ -9,7 +9,7 @@ describe('Ajax', () => {
 
   it('should make an ajax call and return the correct data', (done) => {
     //arrange
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 5000;
     const words = {words: {a: {count: 1, prime: true}}};
     nock(`http://localhost:${port}`)
       .get('/data')

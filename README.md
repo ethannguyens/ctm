@@ -22,7 +22,7 @@ This project is currently stored publicly on GitHub: [https://github.com/ethanng
 $ npm run start
 ```
 This will enable webpack watch, hot module reloading, linting watch and test watch. This allows developer develop with instant result from the browser thanks to hot module reloading
-The task will automatically open the page  [http://localhost:3000](http://localhost:3000)
+The task will automatically open the page  [http://localhost:5000](http://localhost:5000)
 The bundle version of development contaun source map allow developer to debug.
 
 ### Deployment Mode
@@ -30,12 +30,12 @@ The bundle version of development contaun source map allow developer to debug.
 $ npm run build
 ```
 This will bundle up our application and put it in the dist folder and ready to deploy.
-The task will automatically open the page  [http://localhost:3000](http://localhost:3000)
+The task will automatically open the page  [http://localhost:5000](http://localhost:5000)
 This bundle version is minified without source mapping to reduce the size of the app to minimal.
 As an addition, this project as already been deployed to [Heroku](https://gary-stevens-ctm-test.herokuapp.com) so that you may see it in action.
 
 ### Raw data
-Raw Data - a JSOM object that contain all the words can be access by open the page [http://localhost:3000/data](http://localhost:3000/data) after the application is up running.
+Raw Data - a JSOM object that contain all the words can be access by open the page [http://localhost:5000/data](http://localhost:5000/data) after the application is up running.
 
 ### Solution Approach
 #### Webpack
@@ -87,7 +87,7 @@ Due to the time scale of this project, these following improvements can be made:
 
 #### App Deployment - Data Processing
 This is the measure for processing time of the [http://www.loyalbooks.com/download/text/Railway-Children-by-E-Nesbit.txt](http://www.loyalbooks.com/download/text/Railway-Children-by-E-Nesbit.txt)
-Direct access through [http://localhost:3000/data](http://localhost:3000/data)
+Direct access through [http://localhost:5000/data](http://localhost:5000/data)
 
 | Asset        | Load time | Size  |
 | ------------ |:----------|-------|

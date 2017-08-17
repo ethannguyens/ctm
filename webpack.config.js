@@ -3,7 +3,7 @@ import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 //Default Production
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const prod = {
   devtool: 'source-map',
   entry: './src/index',
