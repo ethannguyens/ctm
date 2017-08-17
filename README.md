@@ -21,18 +21,19 @@ This project is currently stored publicly on GitHub: [https://github.com/ethanng
 ```
 $ npm run start
 ```
-This will enable webpack watch, hot module reloading, linting watch and test watch. This allows developer develop with instant result from the browser thanks to hot module reloading
-The task will automatically open the page  [http://localhost:5000](http://localhost:5000)
-The bundle version of development contaun source map allow developer to debug.
+This will enable webpack watch, hot module reloading, linting watch and test watch. This allows developers develop with instant feedback from the browser thanks to hot module reloading.
+The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
+The bundle version of development contains source map allow developers to easily debug.
 
 ### Deployment Mode
 ```
 $ npm run build
 ```
-This will bundle up our application and put it in the dist folder and ready to deploy.
-The task will automatically open the page  [http://localhost:5000](http://localhost:5000)
+This will bundle up the application and put it in the dist folder and ready to deploy.
+The task will automatically open the page  [http://localhost:5000](http://localhost:5000).
 This bundle version is minified without source mapping to reduce the size of the app to minimal.
-As an addition, this project as already been deployed to [Heroku](https://nguyene-ctm.herokuapp.com/) so that you may see it in action. Request to process data ony here [https://nguyene-ctm.herokuapp.com/data](https://nguyene-ctm.herokuapp.com/data)
+As an addition, this project as already been deployed to [Heroku](https://nguyene-ctm.herokuapp.com/) so that you may see it in action.
+Request to process data ony here [https://nguyene-ctm.herokuapp.com/data](https://nguyene-ctm.herokuapp.com/data).
 
 ### Raw data
 Raw Data - a JSOM object that contain all the words can be access by open the page [http://localhost:5000/data](http://localhost:5000/data) after the application is up running.
@@ -54,10 +55,11 @@ fs.readFile('my-file.txt', 'utf8', (err, data) => {
 The callback is passed with 2 arguments `(err, data)`, where data is the content of the file.
 If no encoding specified - utf8 in this case, the raw buffer is return. This is the widely use due to it's simplicity and non blocking.
 ###### Sync - Synchronously read the whole content of a file.
-Example:
-var fs = require('fs');
 Executed thread is blocked. Error need to handle using a `try...catch`
-```javascriptvar 
+Example:
+```javascriptvar
+var fs = require('fs');
+
 try {  
     const data = fs.readFileSync('my-file.txt', 'utf8');
     console.log(data);    
@@ -80,12 +82,17 @@ readStream.on('data', chunk => {
     console.log(data);
 });
 ```
+This is the most effective way to read a file specially large file:
+* Less memory: the target file is loaded in chunks, not much memory needed to store data in a buffer
+* Faster: stream cut down the response time by not waiting for load the whole file. This is significant for server app that is time sensitive
+* Piping: chunks can be pipe to be consumed immediately.
+
 
 #### Prime - `prime-number.js`
 TDD approach, solving traditional prime algorithm problem using while loop. The algorithm complexity is `O(sqrt(n))`
 
 #### Webpack
-`Webpack` is used to bundle all of the files of this project (js, jsx, scss, json...). Javascipt file is transpile using babel before bundling.
+`Webpack` is used to bundle all of the files of this project (js, jsx, scss, json...). JavaScipt file is transpile using babel before bundling.
 There 2 separate configurations, 1 for development with hot module reloading, source map. One for deployment with `uglify` and no source mapping
 
 #### React-Redux
@@ -110,12 +117,12 @@ I follow the **BEM** syntax in naming the elements classes. The generated dome i
 
 ### Unit tests
 For the demonstration used both **TDD** and **BDD** in this project. For the server side I use **TDD**. On the client side - `React` namely I used BDD
-  *  All tests are written in ES6 and are transpiled before running
-  * `nock` is used to mock HTTP request
-  * `enzyme` is to help assert, manipulate, and traverse react components
-  * `mocha` as test runner
-  * `jsdom` is used to construct the fake DOM
-  * `expect` and native node `asser` are used for assertions
+  *  All tests are written in ES6 and are transpiled before running.
+  * `nock` is used to mock HTTP request.
+  * `enzyme` is to help assert, manipulate, and traverse react components.
+  * `mocha` as test runner.
+  * `jsdom` is used to construct the fake DOM.
+  * `expect` and native node `asser` are used for assertions.
 
 ### Future Improvements
 Due to the time scale of this project, these following improvements can be made:
