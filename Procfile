@@ -1,1 +1,1 @@
-web: babel-node app/tools/distServer.js
+web: $(npm bin)/babel-node app/tools/distServer.js
