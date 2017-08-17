@@ -16,7 +16,7 @@ describe('Ajax', () => {
       .reply(200, words);
 
     //act and assert
-    ajax(`http://localhost:${port}`, data => {
+    ajax(`http://localhost:${port}/data`, data => {
       expect(data).toEqual(words);
       done();
     });
