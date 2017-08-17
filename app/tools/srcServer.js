@@ -13,8 +13,6 @@ const app = express();
 const compiler = webpack(config);
 const filePath = path.join( __dirname, '../mock/Railway-Children-by-E-Nesbit.txt');
 
-app.set('port', port);
-
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
@@ -34,10 +32,10 @@ app.get('/data', (red, res) => {
 
 
 app.listen(port, function(err) {
+  console.log(`App run on port: ${port}`);
   if (err) {
     console.log(err);
   } else {
-    console.log(`App run on port: ${port}`);
     open(`http://localhost:${port}`);
   }
 });

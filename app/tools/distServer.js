@@ -11,8 +11,6 @@ const port = process.env.PORT || 5000;
 const app = express();
 const filePath = path.join( __dirname, '../mock/Railway-Children-by-E-Nesbit.txt');
 
-app.set('port', port);
-
 app.use(compression());
 app.use(express.static('dist'));
 
@@ -27,10 +25,10 @@ app.get('/data', (red, res) => {
 });
 
 app.listen(port, function(err) {
+  console.log(`App run on port: ${port}`);
   if (err) {
     console.log(err);
   } else {
-    console.log(`App run on port: ${port}`);
     open(`http://localhost:${port}`);
   }
 });

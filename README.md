@@ -32,7 +32,7 @@ $ npm run build
 This will bundle up our application and put it in the dist folder and ready to deploy.
 The task will automatically open the page  [http://localhost:5000](http://localhost:5000)
 This bundle version is minified without source mapping to reduce the size of the app to minimal.
-As an addition, this project as already been deployed to [Heroku](https://gary-stevens-ctm-test.herokuapp.com) so that you may see it in action.
+As an addition, this project as already been deployed to [Heroku](https://nguyene-ctm.herokuapp.com/) so that you may see it in action.
 
 ### Raw data
 Raw Data - a JSOM object that contain all the words can be access by open the page [http://localhost:5000/data](http://localhost:5000/data) after the application is up running.
