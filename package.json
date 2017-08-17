@@ -2,7 +2,7 @@
   "name": "ctm",
   "version": "1.0.0",
   "description": "Compare the Market Test",
-  "main": "src/main.js",
+  "main": "app/tools/build.js",
   "scripts": {
     "prestart": "babel-node app/tools/startMessage.js",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
