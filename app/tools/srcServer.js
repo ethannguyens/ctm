@@ -13,6 +13,8 @@ const app = express();
 const compiler = webpack(config);
 const filePath = path.join( __dirname, '../mock/Railway-Children-by-E-Nesbit.txt');
 
+app.set('port', port);
+
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
